@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage ('fetch repository') {
             steps {
-                sh 'echo dckr_pat_CV4X-q8OWzs3fpn_aCl9hnxEYbw | /usr/bin/docker login -u punammakh --password-stdin'
+                sh 'git https://github.com/C2-80662/labexam.git'
             }
         }
         stage ('docker build a new image') {
