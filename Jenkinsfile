@@ -4,12 +4,12 @@ pipeline {
     stages {
         stage ('fetch repository') {
             steps {
-                sh 'git https://github.com/C2-80662/labexam.git'
+                git branch: 'master', url:  'https://github.com/C2-80662/labexam.git'
             }
         }
         stage ('docker build a new image') {
             steps {
-                sh '/usr/bin/docker build -t punammakh/myimage .'
+                sh '/usr/bin/docker image build -t punammakh/myimage .'
             }
         }
         stage ('docker non-interactive login'){
